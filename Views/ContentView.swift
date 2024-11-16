@@ -2,9 +2,10 @@ import SwiftUI
 import CoreHaptics
 
 struct ContentView: View {
-    @State private var dotPosition = CGPoint(x: 200, y: 400) // Initial dot position
-    @State private var touchLocation: CGPoint? = nil // User's finger location
+    @State private var dotPosition = CGPoint(x: 200, y: 400)
+    @State private var touchLocation: CGPoint? = nil
     @State private var hapticEngine: CHHapticEngine?
+    @State private var isVibrating = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -26,6 +27,7 @@ struct ContentView: View {
                             }
                             .onEnded { _ in
                                 self.touchLocation = nil
+                                self.stopVibration()
                             }
                     )
             }
@@ -43,9 +45,13 @@ struct ContentView: View {
 
         if distance <= maxDistance {
             let proximity = max(0, 1 - distance / maxDistance)
-            triggerHapticFeedback(intensity: proximity)
+
+            if !isVibrating {
+                startVibration()
+            }
 
             if distance < 20 {
+                stopVibration()
                 triggerHapticClick()
                 randomizeDotPosition(in: screenSize)
             }
@@ -67,21 +73,19 @@ struct ContentView: View {
             print("Haptic engine failed to start: \(error.localizedDescription)")
         }
     }
-
-    private func triggerHapticFeedback(intensity: CGFloat) {
-        guard let engine = hapticEngine else { return }
-
-        let intensityParameter = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(intensity))
-        let sharpnessParameter = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(intensity))
-        let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensityParameter, sharpnessParameter], relativeTime: 0)
-
-        do {
-            let pattern = try CHHapticPattern(events: [event], parameters: [])
-            let player = try engine.makePlayer(with: pattern)
-            try player.start(atTime: 0)
-        } catch {
-            print("Failed to play haptic feedback: \(error.localizedDescription)")
+    private func startVibration() {
+        isVibrating = true
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        DispatchQueue.global(qos: .background).async {
+            while self.isVibrating {
+                generator.impactOccurred()
+                usleep(100_000)
+            }
         }
+    }
+
+    private func stopVibration() {
+        isVibrating = false
     }
 
     private func triggerHapticClick() {

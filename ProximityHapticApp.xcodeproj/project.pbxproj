@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A099A3F42CE8D678009C499C /* ProximityHapticAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A3F32CE8D678009C499C /* ProximityHapticAppApp.swift */; };
-		A099A3F62CE8D678009C499C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A3F52CE8D678009C499C /* ContentView.swift */; };
 		A099A3F82CE8D67A009C499C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099A3F72CE8D67A009C499C /* Assets.xcassets */; };
 		A099A3FC2CE8D67A009C499C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A099A3FB2CE8D67A009C499C /* Preview Assets.xcassets */; };
 		A099A4062CE8D67A009C499C /* ProximityHapticAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A4052CE8D67A009C499C /* ProximityHapticAppTests.swift */; };
 		A099A4102CE8D67A009C499C /* ProximityHapticAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A40F2CE8D67A009C499C /* ProximityHapticAppUITests.swift */; };
 		A099A4122CE8D67A009C499C /* ProximityHapticAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A4112CE8D67A009C499C /* ProximityHapticAppUITestsLaunchTests.swift */; };
+		A099A4382CE8F55D009C499C /* HapticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A4362CE8F55D009C499C /* HapticController.swift */; };
+		A099A43B2CE8F565009C499C /* DotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A4392CE8F565009C499C /* DotModel.swift */; };
+		A099A4402CE8F56F009C499C /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A43C2CE8F56F009C499C /* BackgroundView.swift */; };
+		A099A4412CE8F56F009C499C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A43D2CE8F56F009C499C /* ContentView.swift */; };
+		A099A4422CE8F56F009C499C /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099A43E2CE8F56F009C499C /* DotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		A099A3F02CE8D678009C499C /* ProximityHapticApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProximityHapticApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A099A3F32CE8D678009C499C /* ProximityHapticAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityHapticAppApp.swift; sourceTree = "<group>"; };
-		A099A3F52CE8D678009C499C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A099A3F72CE8D67A009C499C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A099A3F92CE8D67A009C499C /* ProximityHapticApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProximityHapticApp.entitlements; sourceTree = "<group>"; };
 		A099A3FB2CE8D67A009C499C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +48,11 @@
 		A099A40B2CE8D67A009C499C /* ProximityHapticAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProximityHapticAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A099A40F2CE8D67A009C499C /* ProximityHapticAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityHapticAppUITests.swift; sourceTree = "<group>"; };
 		A099A4112CE8D67A009C499C /* ProximityHapticAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityHapticAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A099A4362CE8F55D009C499C /* HapticController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticController.swift; sourceTree = "<group>"; };
+		A099A4392CE8F565009C499C /* DotModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotModel.swift; sourceTree = "<group>"; };
+		A099A43C2CE8F56F009C499C /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		A099A43D2CE8F56F009C499C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A099A43E2CE8F56F009C499C /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,9 @@
 		A099A3E72CE8D678009C499C = {
 			isa = PBXGroup;
 			children = (
+				A099A43F2CE8F56F009C499C /* Views */,
+				A099A43A2CE8F565009C499C /* Models */,
+				A099A4372CE8F55D009C499C /* Controllers */,
 				A099A3F22CE8D678009C499C /* ProximityHapticApp */,
 				A099A4042CE8D67A009C499C /* ProximityHapticAppTests */,
 				A099A40E2CE8D67A009C499C /* ProximityHapticAppUITests */,
@@ -96,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				A099A3F32CE8D678009C499C /* ProximityHapticAppApp.swift */,
-				A099A3F52CE8D678009C499C /* ContentView.swift */,
 				A099A3F72CE8D67A009C499C /* Assets.xcassets */,
 				A099A3F92CE8D67A009C499C /* ProximityHapticApp.entitlements */,
 				A099A3FA2CE8D67A009C499C /* Preview Content */,
@@ -127,6 +137,32 @@
 				A099A4112CE8D67A009C499C /* ProximityHapticAppUITestsLaunchTests.swift */,
 			);
 			path = ProximityHapticAppUITests;
+			sourceTree = "<group>";
+		};
+		A099A4372CE8F55D009C499C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A099A4362CE8F55D009C499C /* HapticController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A099A43A2CE8F565009C499C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A099A4392CE8F565009C499C /* DotModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A099A43F2CE8F56F009C499C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A099A43C2CE8F56F009C499C /* BackgroundView.swift */,
+				A099A43D2CE8F56F009C499C /* ContentView.swift */,
+				A099A43E2CE8F56F009C499C /* DotView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A099A3F62CE8D678009C499C /* ContentView.swift in Sources */,
+				A099A4402CE8F56F009C499C /* BackgroundView.swift in Sources */,
+				A099A4422CE8F56F009C499C /* DotView.swift in Sources */,
+				A099A4412CE8F56F009C499C /* ContentView.swift in Sources */,
+				A099A43B2CE8F565009C499C /* DotModel.swift in Sources */,
+				A099A4382CE8F55D009C499C /* HapticController.swift in Sources */,
 				A099A3F42CE8D678009C499C /* ProximityHapticAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
